@@ -14,7 +14,7 @@ The goal of the experiment was to test the main subsystems of a future autonomou
 * [Power and power management system](#power-and-power-management-system)
 * [Servomotors](#servomotors)
 * [Sensors](#sensors)
-* [Computer running Linux](#computer-running-ubuntu)
+* [Computer running Linux](#computer-running-linux)
 * [Telemetry](#telemetry)
 * [Cameras](#cameras)
 
