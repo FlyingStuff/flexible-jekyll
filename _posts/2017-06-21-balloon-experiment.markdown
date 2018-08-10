@@ -2,7 +2,7 @@
 layout: post
 title: Balloon Launch
 date: 2018-07-21
-description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+description: Balloon experiment launched to an apogee of 30 km to test high altitude glider subsystems
 img: 21Jun_image_balloon.jpeg # Add image post (optional)
 fig-caption: Image taken from the camera of the experiment
 tags: [Balloon, Flying]
@@ -10,7 +10,7 @@ tags: [Balloon, Flying]
 
 
 We've developed an experiment that flew on board of a balloon at an altitude of 90,000 ft (28 km).
-The goal of the experiment was to test the main subsystems of a future autonomous glider that could fly back to the launch site. The subsystems we tested are:
+The goal of the experiment was to test the main subsystems of a future autonomous glider that could fly back to the launch site. The tested subsystems are:
 * [Power and power management system](#power-and-power-management-system)
 * [Servomotors](#servomotors)
 * [Sensors](#sensors)
@@ -20,7 +20,7 @@ The goal of the experiment was to test the main subsystems of a future autonomou
 
 All the plots shown in this document are in SI units with temperatures in Celsius, unless otherwise specified.
 
-The diagram of our experiment can be seen below.
+The diagram of our experiment can be seen in the next picture.
 
 <p align="center"><img src="../assets/img/21Jun_bal/diagram.png"  alt="Diagram" width="60%"/></p>
 
@@ -50,7 +50,7 @@ We reduced the weight to 560 grams. Luckily, they also postponed the launch for 
 
 ## Power and power management system
 
-For the power, we have used Lithium Ion batteries, 3.7v 6600mAh from Adafruit. This includes a protection circuitry that keeps the battery voltage from going too high (over-charging) or too low (over-use) which means that the battery will cut-out when at 3.0V. It will also protect against output shorts.
+For the power, we have used Lithium Ion batteries, 3.7v 6600mAh from Adafruit. They include a protection circuitry that keeps the battery voltage from going too high (over-charging) or too low (over-use) which means that the battery will cut-out when at 3.0V. It will also protect against output shorts.
 The battery was connected to two integrated boost converters also from Adafruit that were used to, on one hand charge the experiment and one the other hand to provide 5V to most of the electronics and servomotors.
 
 What we have observed:
@@ -62,7 +62,7 @@ Below, we see the current and voltage plots of the battery during the entire fli
 
 <p align="center"><img src="../assets/img/21Jun_bal/power.jpg"  alt="Diagram" width="60%"/></p>
 
-As seen in the top plot, the battery is approximately 4.1V when the experiment is turned on. The voltage drops that are seen in the plot are due to the video and pictures taken at a certain interval. When the experiment lands on the ground, the voltage is 3.7. With time, the voltage drops under 3.0 V and the battery shuts down, as expected.
+As seen in the top plot, the battery is approximately 4.1V when the experiment is turned on. The voltage drops that are seen in the plot are due to the video and pictures taken at a certain interval. When the experiment lands on the ground, the voltage is 3.7 V. With time, the voltage drops under 3.0 V and the battery shuts down, as expected.
 
 In the middle plot, we can see the current plot. The same current spikes can be observed when cameras are taken video and pictures. We can observe a correlation in the current and temperature consumption.
 
@@ -182,7 +182,7 @@ The settings we used were:
 * ECC ON (checksum)
 * maximum power = 30 dBm
 
-The continuous telemetry was lost at a bit over 20 km, but we still got sparse packets, the last one at 58 km planar distance (we assumed bad signal). The other payloads were not transmitting at the same frequency but we were not checking the signal quality after integration.
+The continuous telemetry was lost at a bit over 20 km, but we still got sparse packets, the last one at 58 km horizontal distance. The other payloads were not transmitting at the same frequency but we were not checking the signal quality after integration.
 
 
 For the ground station, we implemented a web-server running on the Raspberry Pi. It displayed raw NMEA message and also created a weblink that could be opened in Google Maps Offline mode on the mobile phone. We attached a backup 20Ah battery to the Raspberry Pi. We did not want to use  laptops because we are in the desert.
@@ -221,5 +221,5 @@ The lessons learned:
 * Better thermal management (in our case bigger fans and heat sinks)
 * Design better power supply to handle high current peaks of the telemetry module (from measuring on an oscilloscope, we got around 1.5 A)
 * For the pitot tube sensor, we need to calibrate it with temperature or find a different one
-* The servoes were working correctly, but were a bit shacky when the power supply was low or unstable. We want to take digital ones that should be more stable.
+* The servos were working correctly, but were a bit shacky when the power supply was low or unstable. We want to take digital ones that should be more stable.
 * Disable autofocus, maybe also auto white balance and auto exposure
