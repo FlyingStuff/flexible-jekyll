@@ -85,13 +85,8 @@ A camera was filming the servomotors 20 seconds every 2 minutes. The servomotor 
 Check below a fast-forward movie of how it behaved.
 
 
-<object  align="center" width="425" height="350">
-  <param name="movie" value="https://youtu.be/U84kbV2T5_8" />
-  <param name="wmode" value="transparent" />
-  <embed src="https://youtu.be/U84kbV2T5_8"
-         type="application/x-shockwave-flash"
-         wmode="transparent" width="425" height="350" />
-</object>
+
+{% include youtube.html id='U84kbV2T5_8' %}
 
 From the movies, we can observe the following facts:
 * in total, we had 63 movies, meaning that the camera recorded for 2.7 hours
@@ -158,7 +153,7 @@ The GPS data got recorded on an SD card as well as transmitted to the ground sta
 
 In the image below, the coordinates were plotted in 3D.
 
-<p align="center"><img src="../assets/img/21Jun_bal/gps.png"  alt="GPS" width="60%"/></p>
+<p align="center"><img src="../assets/img/21Jun_bal/gps.jpg"  alt="GPS" width="60%"/></p>
 
 What did we observe:
 * The balloon traveled  69.6 km on horizontal
